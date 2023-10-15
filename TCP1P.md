@@ -192,7 +192,60 @@ So to get the correct input we need to XOR(edx, 0xcafebabe). The rax == **0x0000
 Flag: `TCP1P{r4nd0m_1s_n0t_th4t_r4nd0m_r19ht?_946f38f6ee18476e7a0bff1c1ed4b23b}`
 
 ## Bluffer Overflow
-Simple buffer overflow
+In this challenge we are presented with this code:
+```c
+#include <stdio.h>
+#include <stdlib.h>
+
+char buff[20];
+int buff2;
+
+void setup(){
+	setvbuf(stdin, buff, _IONBF, 0);
+	setvbuf(stdout, buff, _IONBF, 0);
+	setvbuf(stderr, buff, _IONBF, 0);
+}
+
+void flag_handler(){
+	FILE *f = fopen("flag.txt","r");
+  	if (f == NULL) {
+    	printf("Cannot find flag.txt!");
+    	exit(0);
+  }
+}
+
+void buffer(){
+	buff2 = 0;
+	printf("Can you get the exact value to print the flag?\n");
+	printf("Input: ");
+	fflush(stdout);
+	gets(buff);
+	if (buff2 > 5134160) {
+		printf("Too high!\n\n");
+	} else if (buff2 == 5134160){
+		printf("Congrats, You got the right value!\n");
+	 	system("cat flag.txt");
+	} else {
+		printf("Sad, too low! :(, maybe you can add *more* value 0_0\n\n");
+	}
+	printf("\nOutput : %s, Value : %d \n", buff, buff2);
+}
+
+int main(){
+	flag_handler();
+	setup();
+	buffer();
+}
+```
+
+So, we can see the number we need to get is **5134160**. I tried typing characters until i see that buffer is overflown and our input is registered.
+
+The last input that wasn't registered is *0xffffffffffffffffff*, if i tried enhancing that one, value went up.
+
+Next, i just tried bruteforcing it with ASCII characters on my local machine, until i got the answer, that was *0xffffffffffffffffffPWN*, 
+so i tried it in the remote challenge and got the flag.
+
+Flag: `TCP1P{ez_buff3r_0verflow_l0c4l_v4r1abl3_38763f0c86da16fe14e062cd054d71ca}`
 
 ## Links
 [Participation certificate](https://github.com/Archibald1707/ctf_writeups/edit/master/certificate.pdf)
