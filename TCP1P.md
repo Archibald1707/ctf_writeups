@@ -47,6 +47,34 @@ So, the final flag will look like:
 
 ## zipzipzip
 This task consisted of the file zip-25000.zip and the password password.txt. After using the unzip command, it became clear that this is a nesting doll of 25000 zip files folded into each other, and with a password. To solve this task, I wrote code in Python that will do it for me:
+```python
+import os
+
+
+zip_number=25000
+cmd1 = "find . -name '*.zip' -exec unzip -o -P "
+cmd2 = " {} \; -exec rm {} \;"
+
+
+file = open("password.txt", "r")
+pswd = (file.read()).strip()
+file.close()
+
+for i in range(1, zip_number):
+	print('readed pswd number', i, ' - ', pswd)
+	
+	os.system(cmd1 + pswd + cmd2)
+	
+	file = open("password.txt", "r")
+	pswd = (file.read()).strip()
+	file.close()
+	
+	print('done for: ', i)
+```
+
+And in file named zip-1.zip we found file named flag.txt.
+
+Flag: `TCP1P{1_TH1NK_U_G00D_4T_SCR1PT1N9_botanbell_1s_h3r3^_^}`
 
 ## Sanity Check
 This task had a link to events discord server. Upon searching the flag, i found it in the bot's description.\
