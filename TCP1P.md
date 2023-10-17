@@ -248,4 +248,4 @@ so i tried it in the remote challenge and got the flag.
 Flag: `TCP1P{ez_buff3r_0verflow_l0c4l_v4r1abl3_38763f0c86da16fe14e062cd054d71ca}`
 
 ## Links
-[Participation certificate](https://github.com/Archibald1707/ctf_writeups/edit/master/certificate.pdf)
+[Participation certificate](https://github.com/Archibald1707/ctf_writeups/blob/master/certificate.pdf))
