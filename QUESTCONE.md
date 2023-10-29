@@ -1,4 +1,4 @@
-# Questcon CTF
+# Questcone CTF
 A little CTF for newbies, i enjoed it. The one thing i'll mention - forensic chals weren't so fun, so i just ignored them.
 
 ## Sparrow's Cryptographic Treasure
