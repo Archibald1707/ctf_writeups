@@ -144,3 +144,6 @@ This one took a while for me, i was just blindly trying everything, untill i not
 And by now we all know what a **`=`** in the end of string means. So we try base64 decode and we finally get the flag! ~~*it took too long, send some help*~~
 
 Flag: `QUESTCON{D34d_M3n_T3ll_No_T4l3s}`
+
+## Links
+[Participation certificate](https://github.com/Archibald1707/ctf_writeups/blob/master/img/additional_content/questcone%20certificate.pdf)
