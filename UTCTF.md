@@ -2,9 +2,9 @@
 It was not possible to solve the tasks for a long time, so there are very few solutions ;(
 
 ## Contract
-This challenge contained pdf file, so i just used webtool to exif info from it) [Link to pdf file](http://factordb.com/)
+This challenge contained pdf file, so i just used webtool to exif info from it) [Link to pdf file](https://github.com/Archibald1707/ctf_writeups/blob/master/img/additional_content/contract.pdf)
 
-![contract](https://github.com/Archibald1707/ctf_writeups/blob/master/img/sparrows_crypto_treasure.png)
+![contract](https://github.com/Archibald1707/ctf_writeups/blob/master/img/contract.png)
 
 flag: `utflag{s1mpl3_w1z4rding_mist4k3}`
 
@@ -218,4 +218,4 @@ if __name__ == "__main__":
 
 And that was basically it. flag: `utflag{sometimes_pure_guessing_is_the_strat}`
 
-All the python code you can find in [misc folder](http://factordb.com/)
+All the python code you can find in [misc folder](https://github.com/Archibald1707/ctf_writeups/tree/master/misc)
